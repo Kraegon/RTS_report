@@ -44,29 +44,64 @@ Test Setup
 	- Twee robots tegelijk
 	- 5 minuten
 	- Niet in twee speelhalven
-	- 13 ballen (4 roze, 4blauw, 4 geel, 4 groen, 1 zwart)
+	- 17 ballen (4 roze, 4blauw, 4 geel, 4 groen, 1 zwart)
 	- Midden van het veld plateau met zwarte bal (bevestigt met magneet)
 	groen strafpunten
 
 Gezamelijke (alle) Eisen:
+	- Robots autonoom
+	- Robot NIET handmatig worden bestuurd
+	- Maximale afmethingen robot 50x40cm (eventuele extensies toegestaan)
+	- Eigen stroom toevoer robot (enkel elektrische aandrijving)
+	- GEEN letsel fo schade veroorzaken (aan uberhaubt iets)
+	- Maximale interne spanning robot 48 V
+	- Start Knop verplicht
+	- (starten na startsignaal daarna niet meer aanraken)
+	- Maximaal 1 start knop op robot (aangeven aan leiding)
+	- Knop voor een noodstop (zichtbaar en toegankelijk voor scheidsrechter), robot moet compleet gestopt zijn
+	- Intern reservoir voor ballen, deze mag niet op de grond komen
+	- Enkel ingebouwde sensoren toegestaan
+	- Beeldverwerken ect mag door een externe host worden verwerkt.
+	- externe host moet werken met een draadloze verbdinding.
+	- Externe host moet geplaasts worden in de pitstraat
+	- draadloze communicatie door middel van radiofrequenties
+	- Draadloze communicatie een Maand aangeven voor de wedstrijd.
 	- 
+	- optische output van een gebruikte lazer kleiner dan 1 mW
+	- licht op robot mag geen mensen verblinden.
+	- onderdelen heb je een vrije keuze
+	- Geen maximum bedrag
+	- Robot mag niet een andere robot misleiden
+	- geen schade aan speelveld
+	- GEEN  ophangdraden doorknippen
+	- Geen voorwerpen laten vallen
+	- Oppervlakte niet veranderen (glad maken)
+	- Geen rookbommen
+	- Geen flitsen of zeer felle lampen (mag wel voor belichten voor balken)
+	- Geen Stroomstoten of EMP
+	- Wedstrijdballen te plakken aan robot
+	- ballen stelen uit reservoir van andere robots
+	- Voor informatie voor de robot is verboden (tijdens de andere wedstrijden voor je) dus geen ballen op kleur kijken, positie bepalen
+	- robot anders starten dan met de startknop
 	- 
+	- alleen in pitstraat sleutelen aan robot
 	- 
+
 
 Mechanische Eisen:
-	- 
-	- 
-	- 
+	- ...
+	- ...
+	- ...
 
 Electrisch:
-	- 
-	- 
-	- 
+	- ...
+	- ...
+	- ...
 
 Omgeving Eisen:
-	- 
-	- 
-	- 
+	- ...
+	- ...
+	- ...
 
 
 
