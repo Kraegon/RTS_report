@@ -34,7 +34,19 @@ Test Setup
 
 	Missie 2:
 	- twee robots tegelijk
-	- ...
+	- speelveld verdeeld in 2 delen
+	- deel heeft 6 dezelfde kleur ballen
+	- midden hangen 10 balen waarvan om en om een andere kleur (onderlinge afstand: 45cm, hoogte: 10cm < x < 60cm)
+	- Robots ballen verzamelen van de overkant
+	- Eerste bal moet van de overkant worden gehaald, dan van middenlijn.
 
 	Missie 3:
+	- Twee robots tegelijk
+	- 5 minuten
+	- Niet in twee speelhalven
+	- 13 ballen (4 roze, 4blauw, 4 geel, 4 groen, 1 zwart)
+	- Midden van het veld plateau met zwarte bal (bevestigt met magneet)
+	groen strafpunten
+
+	
 
