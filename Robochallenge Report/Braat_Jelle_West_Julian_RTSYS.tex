@@ -64,15 +64,16 @@
 \center % Center everything on the page
 \includegraphics[scale=.1,keepaspectratio]{avans.pdf} \\
 \textsc{\Large Avans Hogeschool Breda}\\[0.5cm] % Major heading such as course name
-
+\textsc{\large Real-Time Systems (RTSYS)}\\[0.5cm] % Minor heading such as course title
 \HRule \\[0.4cm]
-{ \huge \bfseries \textbf{[CONCEPT]} Robochallenge Robot}\\[0.4cm] % Title of your document
+{ \huge \bfseries \textbf{[CONCEPT]} Robochallenge Robot Design Document}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Auteur:}\\
-Julian \textsc{West} % Your name
+\emph{Auteurs:}\\
+Julian \textsc{West} \\
+Jelle \textsc{Braat} \\
 \end{flushleft}
 \end{minipage}
 ~
@@ -80,6 +81,8 @@ Julian \textsc{West} % Your name
 \begin{flushright} \large
 \emph{Leraren:} \\
 Joli \textsc{van Kruijsdijk} \\ % Supervisor's Name
+Hans \textsc{van der Linden} \\
+%Paul \textsc{Lindelauf} %Indien Paul overneemt op 09/02
 %Jan \textsc{Oostindie} %Onbekend of hij wel meehelpt
 \end{flushright}
 \end{minipage}\\[4cm]
@@ -112,7 +115,7 @@ Versie: 0.1
 %----------------------------------------------------------------------------------------
 \section{Introductie}
 \label{sec:introduction}
-\lipsum[0-4]
+\lipsum[0-3]
 \newpage
 %----------------------------------------------------------------------------------------
 % Body
@@ -125,10 +128,56 @@ De volgende eisen worden verder verdeelt in domeinen. Deze domeinen groeperen de
 \subsubsection*{Domein actie}
 \newcommand\litem[1]{\item{\bfseries #1\\}}
 \begin{enumerate}
-\litem{Bewegen} De robot...
-\litem{Grijpen} De robot...
+\litem{Bewegen 1} De robot moet autonoom bewegen, dus zonder enige ingrijpen van een persoon.
+\litem{Bewegen 2} De robot moet kunnen bewegen in 8 assen van vrijheid (Vooruit, achteruit, links, rechts en diagonaal).
+\litem{Grijpen 1} De robot moet een bal kunnen kunnen grijpen.
+\litem{Grijpen 2} De robot moet een bal kunnen grijpen vanaf diverse invalshoeken.
+\litem{Grijpen 3} De robot moet een bal kunnen grijpen op diverse hoogten.
+\litem{Opslaan} De robot moet de ballen naar een intern reservoir kunnen brengen.
+\newpage
+\subsubsection*{Domein detectie}
+\litem{Plaats 1} De robot moet zijn plaats in een ruimte kunnen detecteren.
+\litem{Plaats 2} De robot moet de limieten (muren) van een ruimte kunnen bepalen.
+\litem{Objecten} De robot moet de anderskleurige ballen vinden in relatie met zijn positie.
+\litem{Kleur} De robot moet distinctie kunnen brengen in de kleuren van de ballen. 
+\subsubsection*{Domein interactie}
+\litem{Starten} De robot moet gestart worden door een enkele startknop.
+\litem{Data verwerking} De robot mag vergaarde informatie draadloos versturen voor verwerking en weer ontvangen.
+\litem{Noodknop} De robot moet voorzien zijn van een noodknop die onmiddellijk alle functionaliteiten van de robot stop legt.
 \end{enumerate}
 \newpage
+\subsection{Niet-functionele eisen}
+Deze lijst eisen volgt het zelfde formaat als de functionele eisen. Deze eisen zijn gegroepeerd op de functionele eisen waarop de niet-functionele eis wordt gesteld.
+\subsubsection*{Domein grijpen}
+\begin{enumerate}
+\litem{Grip} De robot mag ballen die zijn gegrepen niet laten vallen.
+\litem{Keuze} De robot moet de correcte bal pakken die de missie (beschreven in \textbf{TODO[ref]}) vereist.
+\litem{Opslag 1} De robot moet een opslag hebben die voldoende groot is voor 17 ballen met een diameter van 7cm.
+\litem{Opslag 2} De robot moet na het opslaan van een bal, deze niet kwijtraken.
+\subsubsection*{Domein bewegen}
+\litem{Stabiliteit} De robot mag niet omvallen.
+\litem{Muren} De robot moet wanneer deze tegen een muur aanrijdt kiezen om een andere kant op te gaan.
+\subsubsection*{Domein plaatsbepaling}
+\litem{Nauwkeurigheid} De robot moet de plaats van een bal kunnen bepalen in 3 dimensies.
+\subsubsection*{Domein kleur}
+\litem{Precisie} De robot moet ballen kunnen onderscheiden tussen in hun primaire of secundaire kleur.
+
+\end{enumerate}
+\subsection{Pseudo eisen}
+Ten slotte zijn er de pseudo eisen. Deze zijn niet gegroepeerd vanwege te weinig cohesie tussen deze eisen.
+\begin{enumerate}
+\litem{Grootte} De robot mag niet groter zijn dan 50x40cm.
+\litem{Aandrijving} De robot mag alleen elektrisch aangedreven worden.
+\litem{Stroomtoevoer} De robot moet voorzien zijn van zijn eigen stroom toevoer.
+\litem{Spanning} De maximale interne spanning binnen de robot is 48 volt.
+\litem{Licht} De robot mag geen verblindend licht gebruiken.
+\litem{Misleiden} De robot mag niet voorzien zijn van onderdelen die de tegenstander kan misleiden.
+\litem{Offensief} De robot mag niet voorzien zijn van offensieve middelen zoals rookbommen, stroomstoten of Elektromagnetische Pulse(EMP) wapens.
+\litem{Noodknop} De noodknop op de robot moet zichtbaar en toegankelijk zijn. 
+\end{enumerate}
+\newpage
+\%Mogelijk zouden er nog eisen kunnen worden gesteld aan procesmatige dingen, maar laten we die maar even buiten opzicht houden. Verder is er ook de test setup die beschreven kan worden, maar dat kan in zijn eigen hoofdstuk ofzo. Oh, en als aller laatste: die TODO daarboven wordt gevuld zodra we de missies in een later hoofdstuk hebben beschreven. dat kan met een ref{sec:mijnref} en label{sec:mijnref}. 
+
 %----------------------------------------------------------------------------------------
 % Conclusion?
 %----------------------------------------------------------------------------------------
