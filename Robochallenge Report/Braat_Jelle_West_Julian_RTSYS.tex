@@ -15,6 +15,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TODO
+% 
+% USE CASE (of vervanging hiervan)
+% SUBSYSTEEM DECOMPOSITIE
+% BLACK BOX 
+% MORPHOLOGISCH ONDERZOEK
+% WHITE BOX OMSCHRIJVING
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -118,65 +129,108 @@ Versie: 0.1
 \lipsum[0-3]
 \newpage
 %----------------------------------------------------------------------------------------
-% Body
+% Requirements
 %----------------------------------------------------------------------------------------
+%Funcitonele
+%Operationele
+%QoS(quality of service)
+%Parametrische
+%Design
+
 \section{Eisen}
-\label{sec:functionalities}
-In dit hoofdstuk worden eisen bepaald aan het systeem van de Robochallenge robot. Deze eisen zijn onderverdeeld in de functionele, niet-functionele  en pseudo eisen. Onder functioneel wordt concrete handelingen verstaan, onder niet-functioneel kwaliteitseisen en onder pseudo eisen randvoorwaarden. 
-\subsection{Functionele eisen}
-De volgende eisen worden verder verdeelt in domeinen. Deze domeinen groeperen de handeling op basis van het doeleinde.
-\subsubsection*{Domein actie}
+\label{sec:requirements}
+In dit hoofdstuk worden eisen gesteld aan het systeem van de Robochallenge robot. Deze eisen zijn onderverdeeld in de volgende 5 typen eisen. Ten eerste de functionele eisen, daarna operationele, gevolgd door Quality of Service(QoS) eisen, hierna de parametrische eisen en als laatste de design eisen. Sommige eisen kunnen verder worden gegroepeerd met gerelateerde eisen.\\
+Met de operationele eisen wordt bedoeld hoe het systeem met de diverse elementen in de omgeving zal samenwerken. 
+Onder de functionele eisen wordt het gedrag en het kunnen van het systeem verstaan.
+QoS eisen houdt in hoe goed het systeem zijn operationele en functionele eisen uitvoert.
+Parametrische eisen betekent eisen aan de grootte van het fysieke systeem. 
+Ten slotte valt onder design eisen de eisen aan de impressie en bruikbaarheid van het systeem.
+
+\subsection{Operationele eisen}
+
 \newcommand\litem[1]{\item{\bfseries #1\\}}
 \begin{enumerate}
-\litem{Bewegen 1} De robot moet autonoom bewegen, dus zonder enige ingrijpen van een persoon.
-\litem{Bewegen 2} De robot moet kunnen bewegen in 8 assen van vrijheid (Vooruit, achteruit, links, rechts en diagonaal).
-\litem{Grijpen 1} De robot moet een bal kunnen kunnen grijpen.
-\litem{Grijpen 2} De robot moet een bal kunnen grijpen vanaf diverse invalshoeken.
-\litem{Grijpen 3} De robot moet een bal kunnen grijpen op diverse hoogten.
-\litem{Opslaan} De robot moet de ballen naar een intern reservoir kunnen brengen.
-\newpage
-\subsubsection*{Domein detectie}
+\litem{Grijpen} De robot moet een bal kunnen kunnen grijpen.
 \litem{Plaats 1} De robot moet zijn plaats in een ruimte kunnen detecteren.
 \litem{Plaats 2} De robot moet de limieten (muren) van een ruimte kunnen bepalen.
+\litem{Starten} De robot moet gestart worden door een enkele startknop.
+\litem{Noodknop} De robot moet voorzien zijn van een noodknop die onmiddellijk alle functionaliteiten van de robot stop legt.
+\litem{Aandrijving} De robot mag alleen elektrisch aangedreven worden.
+\litem{Pitstop} De robot moet naar de pitstop kunnen navigeren.
+\litem{instellen} De robot moet vanaf een kaart een keuze maken m.b.t. ballen keuze.
+\end{enumerate}
+
+\subsection{Functionele eisen}
+\begin{enumerate}
+\litem{Kalibreren} De robot moet op basis van input zijn onderdelen automatisch kunnen bij- of instellen.
+\litem{Bewegen} De robot moet autonoom bewegen, dus zonder enige ingrijpen van een persoon.
+\litem{Opslaan} De robot moet de ballen naar een intern reservoir kunnen brengen.
 \litem{Objecten} De robot moet de anderskleurige ballen vinden in relatie met zijn positie.
 \litem{Kleur} De robot moet distinctie kunnen brengen in de kleuren van de ballen. 
-\subsubsection*{Domein interactie}
-\litem{Starten} De robot moet gestart worden door een enkele startknop.
-\litem{Data verwerking} De robot mag vergaarde informatie draadloos versturen voor verwerking en weer ontvangen.
-\litem{Noodknop} De robot moet voorzien zijn van een noodknop die onmiddellijk alle functionaliteiten van de robot stop legt.
+\litem{Keuze} De robot moet de correcte bal pakken die de missie vereist.
+\litem{Muren} De robot moet wanneer deze tegen een muur aanrijdt kiezen om een andere kant op te gaan.
 \end{enumerate}
 \newpage
-\subsection{Niet-functionele eisen}
-Deze lijst eisen volgt het zelfde formaat als de functionele eisen. Deze eisen zijn gegroepeerd op de functionele eisen waarop de niet-functionele eis wordt gesteld.
-\subsubsection*{Domein grijpen}
-\begin{enumerate}
-\litem{Grip} De robot mag ballen die zijn gegrepen niet laten vallen.
-\litem{Keuze} De robot moet de correcte bal pakken die de missie (beschreven in \textbf{TODO[ref]}) vereist.
-\litem{Opslag 1} De robot moet een opslag hebben die voldoende groot is voor 17 ballen met een diameter van 7cm.
-\litem{Opslag 2} De robot moet na het opslaan van een bal, deze niet kwijtraken.
-\subsubsection*{Domein bewegen}
-\litem{Stabiliteit} De robot mag niet omvallen.
-\litem{Muren} De robot moet wanneer deze tegen een muur aanrijdt kiezen om een andere kant op te gaan.
-\subsubsection*{Domein plaatsbepaling}
-\litem{Nauwkeurigheid} De robot moet de plaats van een bal kunnen bepalen in 3 dimensies.
-\subsubsection*{Domein kleur}
-\litem{Precisie} De robot moet ballen kunnen onderscheiden tussen in hun primaire of secundaire kleur.
 
-\end{enumerate}
-\subsection{Pseudo eisen}
-Ten slotte zijn er de pseudo eisen. Deze zijn niet gegroepeerd vanwege te weinig cohesie tussen deze eisen.
+\subsection{Quality of Service eisen}
 \begin{enumerate}
+\litem{Flexibility 1} De robot moet kunnen bewegen in 8 assen van vrijheid (Vooruit, achteruit, links, rechts en diagonaal).
+\litem{Flexibility 2} De robot moet een bal kunnen grijpen vanaf diverse invalshoeken.
+\litem{Flexibility 3} De robot moet een bal kunnen grijpen op diverse hoogten.
+\litem{Stability} De robot mag ballen die zijn gegrepen niet laten vallen.
+\litem{Reliability} De robot moet ballen kunnen onderscheiden in hun primaire of secundaire kleur.
+\end{enumerate}
+
+\subsection{Parametrische eisen}
+\begin{enumerate}
+\litem{Opslag} De robot moet een opslag hebben die voldoende groot is voor 17 ballen met een diameter van 7cm.
 \litem{Grootte} De robot mag niet groter zijn dan 50x40cm.
-\litem{Aandrijving} De robot mag alleen elektrisch aangedreven worden.
+\litem{Verplaatsbaar} De robot zou handmatig te verplaatsen moeten zijn. 
 \litem{Stroomtoevoer} De robot moet voorzien zijn van zijn eigen stroom toevoer.
 \litem{Spanning} De maximale interne spanning binnen de robot is 48 volt.
+\litem{Toegankelijkheid} Onderdelen moeten toegankelijk zijn om tussen missies aanpassingen te kunnen maken.
+\end{enumerate}
+\newpage
+
+\subsection{Design eisen}
+\begin{enumerate}
 \litem{Licht} De robot mag geen verblindend licht gebruiken.
 \litem{Misleiden} De robot mag niet voorzien zijn van onderdelen die de tegenstander kan misleiden.
 \litem{Offensief} De robot mag niet voorzien zijn van offensieve middelen zoals rookbommen, stroomstoten of Elektromagnetische Pulse(EMP) wapens.
-\litem{Noodknop} De noodknop op de robot moet zichtbaar en toegankelijk zijn. 
+\litem{Noodknop} De noodknop op de robot moet zichtbaar en toegankelijk zijn.
 \end{enumerate}
 \newpage
-\%Mogelijk zouden er nog eisen kunnen worden gesteld aan procesmatige dingen, maar laten we die maar even buiten opzicht houden. Verder is er ook de test setup die beschreven kan worden, maar dat kan in zijn eigen hoofdstuk ofzo. Oh, en als aller laatste: die TODO daarboven wordt gevuld zodra we de missies in een later hoofdstuk hebben beschreven. dat kan met een ref{sec:mijnref} en label{sec:mijnref}. 
+
+%----------------------------------------------------------------------------------------
+% Use Case
+%----------------------------------------------------------------------------------------
+\section{Use case beschrijvingen}
+Dit hoofdstuk is toegewijd aan het omschrijven van de gebruikers interactie met het systeem. Elke use case beschrijft hoe een gebruiker een functie van het systeem uitvoert en hoe het systeem (visueel) hierop reageert.
+
+\subsection{Use case diagram}
+
+Het volgende diagram laat schematisch zien welke operaties een gebruiker kan uitvoeren met het systeem. Elke use case statement is als eis te herleiden naar een eis.
+\begin{center}
+\begin{figure}
+\includegraphics[scale=.9]{usecase.png}
+\caption{Use case diagram van het globale systeem}
+\label{fig:usecase}
+\end{figure}
+\end{center}
+\clearpage
+
+\subsection{Use case omschrijvingen}
+
+\begin{table}[h]
+\begin{tabular}{ll}
+Use case omschrijving & Systeem starten \\
+
+%TODO steal table from old RAD. trust me everybody did that
+
+\end{tabular}
+\end{table}
+
+\newpage
 
 %----------------------------------------------------------------------------------------
 % Conclusion?
