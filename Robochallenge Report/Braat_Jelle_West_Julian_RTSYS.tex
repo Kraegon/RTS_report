@@ -43,7 +43,7 @@
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-\usepackage{booktabs} % used for table?
+\usepackage{booktabs} % used for table
 
 \linespread{1.2} % Line spacing
 
@@ -149,7 +149,8 @@ Ten slotte valt onder design eisen de eisen aan de impressie en bruikbaarheid va
 \litem{Noodknop} De robot moet voorzien zijn van een noodknop die onmiddellijk alle functionaliteiten van de robot stop legt.
 \litem{Aandrijving} De robot mag alleen elektrisch aangedreven worden.
 \litem{Pitstop} De robot moet naar de pitstop kunnen navigeren.
-\litem{instellen} De robot moet vanaf een kaart een keuze maken m.b.t. ballen keuze.
+\litem{Instellen} De robot moet vanaf een kaart een keuze maken m.b.t. ballen keuze.
+\litem{Geluid} De robot moet een zoemer hebben voor feedback aan de gebruiker.
 \end{enumerate}
 
 \subsection{Functionele eisen}
@@ -181,7 +182,6 @@ Ten slotte valt onder design eisen de eisen aan de impressie en bruikbaarheid va
 \litem{Stroomtoevoer} De robot moet voorzien zijn van zijn eigen stroom toevoer.
 \litem{Spanning} De maximale interne spanning binnen de robot is 48 volt.
 \litem{Toegankelijkheid} Onderdelen moeten toegankelijk zijn om tussen missies aanpassingen te kunnen maken.
-\litem{Toegankelijkheid 2} De accu moet verwisselbaar zijn.
 \end{enumerate}
 \newpage
 
@@ -334,19 +334,105 @@ Het volgende diagram laat schematisch zien welke operaties een gebruiker kan uit
 %----------------------------------------------------------------------------------------
 \section{Black box subsysteem architectuur}
 \label{sec:Black box subsysteem architectuur}
+Een black box subsysteem is een gesloten decompositie
+\subsection{Interfaces}
+
+\subsection{Structured classes}
+
+\subsection{Diagram}
 
 \newpage%----------------------------------------------------------------------------------------
 % Deployment view
 %----------------------------------------------------------------------------------------
 \section{Deployment view}
 \label{sec:Deployment view}
+Een deployment view beschrijft de interne omgeving waar het systeem op draait. Indien de interne omgeving ook externe afhankelijkheden heeft dan worden deze ook beschreven in het systeem. Alles zal dus op runtime van het systeem draaien ook de externe afhankelijkheden.
 
+\subsection{Morfologisch overzicht}
+
+\subsubsection{Aandrijving}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+Servo & Gemakkelijk en terug in dezelfde stand & beperkt toerental en massatraagheid		\\ \hline
+Staafanker motor & Thermisch belastbaar en een groot vermogen & Massatraagheid en een hoog toerental	\\ \hline
+Borstelloze DC & Hoge koppelpiek en betrouwbaar & Koppelrimpel en heeft geen positie sensoren intern 		\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Oppakken}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+ &  & 		\\ \hline
+ &  & 		\\ \hline
+ &  &  		\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Zoomer}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+ &  & 		\\ \hline
+ &  & 		\\ \hline
+ &  &  		\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Knop}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+ &  & 		\\ \hline
+ &  & 		\\ \hline
+ &  &  		\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Camera}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+ &  & 		\\ \hline
+ &  & 		\\ \hline
+ &  &  		\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Grijper}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{3166FF} \textbf{Mogelijkheden}} & {\color[HTML]{3166FF} \textbf{Voordelen}} & {\color[HTML]{3166FF} \textbf{Nadelen}} \\ \hline
+ &  & 		\\ \hline
+ &  & 		\\ \hline
+ &  &  		\\ \hline
+\end{tabular}
+\end{table}
+\clearpage
+
+\subsection{Deployment diagram}
+\begin{center}
+\begin{figure}[h]
+\includegraphics[scale=.65]{deployment.png}
+\caption{Deployment view diagram van de robot}
+\label{fig:deployment}
+\end{figure}
+\end{center}
+\clearpage
 \newpage%----------------------------------------------------------------------------------------
 % White box subsysteem architectuur
 %----------------------------------------------------------------------------------------
 \section{White box subsysteem architectuur}
 \label{sec:conclusion}
-\lipsum[0-2]
+
+\subsection{Interfaces}
+
+\subsection{Structured classes}
+
+\subsection{Diagram}
+
 \newpage%----------------------------------------------------------------------------------------
 %	Glossary
 %----------------------------------------------------------------------------------------
