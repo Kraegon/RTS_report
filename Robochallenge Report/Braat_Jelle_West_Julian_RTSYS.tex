@@ -99,7 +99,7 @@ Paul \textsc{Lindelauf} %Indien Paul overneemt op 09/02
 \end{minipage}\\[4cm]
 
 {\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
-Versie: 0.1
+Versie: 0.9
 \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
@@ -115,10 +115,10 @@ Versie: 0.1
 %----------------------------------------------------------------------------------------
 % Introduction
 %----------------------------------------------------------------------------------------
-\section{Introductie}
-\label{sec:introduction}
-\lipsum[0-3]
-\newpage
+%\section{Introductie}
+%\label{sec:introduction}
+%\lipsum[0-3]
+%\newpage
 %----------------------------------------------------------------------------------------
 % Requirements
 %----------------------------------------------------------------------------------------
@@ -276,7 +276,19 @@ Een black box subsysteem is een gesloten decompositie van het systeem. Dit houdt
 \end{figure}
 \end{center}
 \clearpage
+
+\begin{landscape}
 \subsection{Sequence/State Machine diagram}
+\begin{center}
+\begin{figure}[h]
+\includegraphics[scale=.6]{StateMachineDiagram.png}
+\caption{State Machine diagram}
+\label{fig:deployment}
+\end{figure}
+\end{center}
+\clearpage
+\newpage
+\end{landscape}
 
 \newpage%----------------------------------------------------------------------------------------
 % Deployment view
@@ -365,36 +377,85 @@ Het morfologische overzicht is een vergelijking tussen componenten . Deze compon
 \subsection{Interfaces}
 \subsubsection{Logica}
 De logica stuurt alle data door en verwerkt data. Dit gaat door middel van een controller. De controller ontvangt de data, daarna wordt er bepaald wat er met de data moet gebeuren en hoe waar het naartoe gestuurd moet worden. Dit is het hart van het systeem.
+
 \subsubsection{Aandrijving}
+Er kan geroteerd worden bij een minimum van twee motoren. De motors zullen relatief van elkaar de snelheid aanpassen. Hierdoor is rotatie mogelijk.	\\*
 De motor is een servo die op verschillende manieren data kan gebruiken. De motor bestaat uit verschillende onderdelen die verschillende mogelijkheden hebben:
 \begin{itemize}
-\item PWM - dit is de Pulse-width modulation
-\item Rijden -
-\item Noodstop - 
+\item PWM - dit is de Pulse-width modulation dat houdt in dat er een elektrisch signaal wordt verstuurt in de vorm van een blokgolf met een vaste frequentie. De spanning is dus of volledig ingeschakeld of uitgeschakeld. Binnen een bepaalde tijd is er een cyclus van 1 en 0 waarmee het signaal hoog of laag wordt.
+\item Rijden - dit houdt in dat de motor vooruit/achteruit gaat draaien. Hierdoor bewegen de wielen en kan de robot zich voort bewegen. Omdat er een PWM is zal de motor op verschillende snelheden kunnen rijden en met meerdere motoren maakt dit rotatie mogelijk.
+\item Noodstop - de motor moet afslaan zodra er een noodstop wordt gemaakt. Hierdoor zal de motor niet door rijden.
 \end{itemize}
-\subsubsection{Grijper}
-\subsubsection{Input/Output}
-\subsubsection{Vision}
-\subsubsection{Vermogen}
 
+\subsubsection{Vermogen}
+Het vermogen van het systeem bestaat uit een batterij. Deze batterij is de stroom toevoer naar het systeem.
 \begin{itemize}
-\item Het systeem heeft logica nodig om te functioneren. Dit is het belangrijkste component van het systeem en zal de alle (volgende) onderdelen combineren.
+\item Percentage - het percentage van de batterij is belangrijk, indien het percentage te laag is geeft het systeem aan dat er te weinig vermogen is om de missie te uit te voeren. Het systeem kan dit laten weten door een geluid af te spelen op de zoemer
+\item Temperatuur - de temperatuur van de batterij is belangrijk om in de gaten te houden. Indien de temperatuur te hoog wordt zal het systeem zichzelf deactiveren. Dit is om onnodig gevaar te voorkomen.
 \end{itemize}
+
+\subsubsection{Grijper}
+De communicatie met de grijper gaat via de Input/Output
+De grijper heeft verschillende mogelijkheden, het doel van de grijper is om uiteindelijk een bal op te pakken.
+\begin{itemize}
+\item Open - de grijper spreidt, zodat hij een bal kan pakken of los kan laten.
+\item Dicht - de grijper klemt, zodat hij een bal kan vasthouden en verplaatsen.
+\end{itemize} 
+De grijper heeft een dubbel joint, dit houd in dat aan de metalen as de grijper in verschillende dimensies kan bewegen.
+\begin{itemize}
+\item Rechts - de grijper draait naar rechts toe.
+\item Links - de grijper draait naar links toe.
+\item Boven - de grijper draait naar boven toe.
+\item Onder - de grijper draait naar beneden toe.
+\end{itemize}
+
+\subsubsection{Input/Output}
+De Input/Output krijgt via Seriële data alle gegevens van de grijper, zoemer en knop en communiceert deze door met de logica van het systeem. \\* \\*
+Interupt Service Routine (ISR) is een onderbreking. Dit vindt plaats wanneer er een knop wordt ingedrukt. Als dit gebeurt zal het rechtstreeks naar de logica worden gestuurd en zal voorrang krijgen op de andere communicatie. \\* \\*
+De I/O heeft ook een knop deze knop wordt gebruikt als een start knop en als een noodknop de knop heeft twee functies.
+\begin{itemize}
+\item Indrukken - als de knop wordt ingedrukt zal er een ISR plaatsvinden.
+\item Loslaten - als de knop wordt losgelaten wordt dit door gecommuniceerd naar de seriële data.
+\end{itemize}
+De I/O heeft ook een zoemer de zoemer heeft praktische functies voor het aangeven van fouten of enige andere vorm van communicatie met de buitenwereld.
+\begin{itemize}
+\item Frequentie - de frequentie van het geluid kan hiermee worden aangepast.
+\item Aan - hiermee wordt de zoemer aangezet.
+\item Uit - hiermee wordt de zoemer uitgezet.
+\end{itemize}
+
+\subsubsection{Vision}
+Het gedeelte vision bestaat uit twee secties, camera verwerking en camera detectie. Vision voert alle beeld verwerking uit dit houdt in dat de robot hieruit gegevens kan halen van een bal of een kleur. \\*
+Camera detectie bestaat uit twee onderdelen namelijk :
+\begin{itemize}
+\item Kleur herkenning - de camera kan kleuren zoals rood groen en blauw detecteren en herkennen. Hierdoor kan het systeem ballen van verschillende kleuren herkennen.
+\item Obstructie herkenning - het systeem een kan object of obstructie herkennen en hierop reageren door deze te ontwijken.
+\end{itemize}
+Camera verwerking zorgt voor communicatie met de logica  aanwezig is. Dit is niet het enige het communiceert ook met de Camera detectie. Camera verwerking bestaat uit drie onderdelen die nauw samenwerken met camera detectie.
+\begin{itemize}
+\item Kalibratie - kalibratie is aanwezig omdat de kleur voor elke missie in te stellen is. De kalibratie werkt samen met kleur herkenning.
+\item Beeld filter - het beeldfilter is een reeds filters die over beelden heen gedaan kan worden. Hierdoor worden randen en muren uitgelezen.
+\item Beeldverwerking - hier komen alle beelden samen en worden verwerkt. De beeldverwerking communiceert nuttige data naar de logica, met nuttige data wordt bedoelt een positie van een bal of van een obstructie.
+\end{itemize}
+
+\newpage
 
 \subsection{Structured classes}
 \begin{center}
 \begin{figure}[h]
 \includegraphics[scale=.6]{WhiteBoxDiagram.png}
-\caption{White box diagram}
+\caption{White box subsysteem diagram}
 \label{fig:deployment}
 \end{figure}
 \end{center}
 \clearpage
 \newpage
 
-\subsection{Sequence/State Machine diagram}
+%TODO make SEQUENCE / STATE MACHINE DIAGRAM!
+%\subsection{Sequence/State Machine diagram}
+%
 
-\newpage%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 %	Glossary
 %----------------------------------------------------------------------------------------
 %\clearpage
