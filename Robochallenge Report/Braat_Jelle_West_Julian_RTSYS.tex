@@ -215,37 +215,37 @@ Het volgende diagram laat schematisch zien welke operaties een gebruiker kan uit
 \newpage
 
 \subsection{Use case omschrijvingen}
-
+De hier
 \begin{center}
-\begin{figure}[H]
+\begin{table}[H]
 \includegraphics[scale=.9]{uc1.png}
 \caption{Use case diagram van het globale systeem}
-\label{fig:usecase}
-\end{figure}
+\label{tbl:usecase1}
+\end{table}
 \end{center}
 
 \begin{center}
-\begin{figure}
+\begin{table}
 \includegraphics[scale=.9]{uc2.png}
 \caption{Use case omschrijving}
-\label{fig:usecase}
-\end{figure}
+\label{fig:usecase2}
+\end{table}
 \end{center}
 
 \begin{center}
-\begin{figure}
+\begin{table}
 \includegraphics[scale=.9]{uc3.png}
 \caption{Use case omschrijving}
-\label{fig:usecase}
-\end{figure}
+\label{tbl:usecase3}
+\end{table}
 \end{center}
 
 \begin{center}
-\begin{figure}
+\begin{table}
 \includegraphics[scale=.9]{uc4.png}
 \caption{Use case omschrijving}
-\label{fig:usecase}
-\end{figure}
+\label{tbl:usecase4}
+\end{table}
 \end{center}
 
 \newpage
@@ -266,8 +266,8 @@ Een black box subsysteem is een gesloten decompositie van het systeem. Dit houdt
 \item Het systeem heeft input en output (I/O) nodig. Dit zijn verschillende hardware componenten waar het systeem gebruik van zal maken. I/O is een verzamel naam voor alle overige componenten. 
 \end{itemize}
 \clearpage
-
 \subsection{Structured classes}
+Het volgende diagram geeft schematisch de verschillende subsystemen weer. Binnen in de subsystemen staat een korte omschrijving van het doel van het subsysteem en tussen de subsystemen is de relatie met de andere subsystemen te zien.
 \begin{center}
 \begin{figure}[h]
 \includegraphics[scale=1.]{BlackBoxDiagram.png}
@@ -276,9 +276,9 @@ Een black box subsysteem is een gesloten decompositie van het systeem. Dit houdt
 \end{figure}
 \end{center}
 \clearpage
-
 \begin{landscape}
 \subsection{Sequence/State Machine diagram}
+Dit diagram geeft een beeld van de staten waarin het systeem zich kan bevinden. 
 \begin{center}
 \begin{figure}[h]
 \includegraphics[scale=.6]{StateMachineDiagram.png}
@@ -298,68 +298,79 @@ Een black box subsysteem is een gesloten decompositie van het systeem. Dit houdt
 Een deployment view beschrijft de interne omgeving waar het systeem op draait. Indien de interne omgeving ook externe afhankelijkheden heeft dan worden deze ook beschreven in het systeem. Alles zal dus op runtime van het systeem draaien ook de externe afhankelijkheden.
 
 \subsection{Morfologisch overzicht}
-Het morfologische overzicht is een vergelijking tussen componenten . Deze componenten zijn onder anderen aandrijving en grijpen. Er wordt een vergelijking gemaakt, met de componenten, die de voordelen en nadelen bepaald van componenten die gebruikt kunnen worden in het systeem.
+Het morfologische overzicht is een vergelijking tussen componenten. Deze componenten zijn onder anderen aandrijving en grijpen. Er wordt een vergelijking gemaakt, met de componenten, die de voordelen en nadelen bepaald van componenten die gebruikt kunnen worden in het systeem.
 
 \subsubsection{Beweging(Aandrijving)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelAand.png}
 \caption{tabel aandrijving}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
 \clearpage
 
 \subsubsection{Oppakken (Grijpen)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelOppakken.png}
 \caption{tabel oppakken}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
 
 
-\subsubsection{Zoomer (I/O)}
+\subsubsection{Zoemer (I/O)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelZoomer.png}
 \caption{tabel zoomer}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
 \clearpage
 
 \subsubsection{Knop (I/O)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelKnop.png}
 \caption{tabel knoppen}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
 
 \subsubsection{Camera (Vision)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelCam.png}
 \caption{tabel aandrijving}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
 \clearpage
 
 \subsubsection{Batterij (Vermogen)}
 \begin{center}
-\begin{figure}[h]
+\begin{table}[h]
 \includegraphics[scale=1.]{tabelBat.png}
 \caption{tabel aandrijving}
 \label{fig:deployment}
-\end{figure}
+\end{table}
 \end{center}
+\subsubsection{Conclusie morfologisch onderzoek}
+De uiteindelijke keuzes zijn gevallen op:
+\begin{description}
+\item[Beweging] Servo motor
+\item[Oppakken] Grijper met twee joint as
+\item[Zoemer] SKU: DFR0032
+\item[Knop] Noodknop
+\item[Camera] Ximea xiO
+\item[Batterij] Li-ion batterij
+\end{description}
 \clearpage
 
 \subsection{Deployment diagram}
+Het volgende diagram geeft de plaatsten van de hardware binnen de subsystemen weer.
 \begin{center}
 \begin{figure}[h]
 \includegraphics[scale=.65]{deployment.png}
@@ -441,6 +452,7 @@ Camera verwerking zorgt voor communicatie met de logica  aanwezig is. Dit is nie
 \newpage
 
 \subsection{Structured classes}
+Dit diagram geeft de interne subsubsystemen weer en de relatie daartussen.
 \begin{center}
 \begin{figure}[h]
 \includegraphics[scale=.6]{WhiteBoxDiagram.png}
